@@ -31,7 +31,7 @@ class DecisionTree:
 
     def information_gain(self, attribute_index):
         '''
-        Calculates the reduced entropy of classifiers
+        Calculates the entropy reduction of classifiers
         after the collection is split by values in the
         attribute_index column of the collection
         '''
@@ -46,6 +46,6 @@ class DecisionTree:
             reduced_entropy = self.calculate_entropy(split_classifier)
             p_attribute_value = float(count)/total_states
             entropy += reduced_entropy * p_attribute_value
-        return self.total_entropy
+        return self.total_entropy - entropy
 
 
